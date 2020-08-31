@@ -1,0 +1,3 @@
+failfast=sdk.cluster.FailfastCluster
+failsafe=sdk.cluster.FailsafeCluster
+failover=sdk.cluster.FailoverCluster

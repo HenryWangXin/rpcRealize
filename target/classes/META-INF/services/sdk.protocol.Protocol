@@ -1,0 +1,2 @@
+dubbo=sdk.protocol.dubbo.DubboProtocol
+http=sdk.protocol.http.HttpProtocol
