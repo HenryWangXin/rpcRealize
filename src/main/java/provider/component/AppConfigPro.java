@@ -25,7 +25,7 @@ public class AppConfigPro {
         ServiceConfig serviceConfig = new ServiceConfig();
         serviceConfig.setHost("127.0.0.1");
         serviceConfig.setPort(8081);
-        serviceConfig.setProtocol("dubbo");
+        serviceConfig.setProtocol("http");
         serviceConfig.setWeight(3);
         serviceConfig.setInterfaceName("provider.api.HelloService");
         serviceConfig.setRef(helloServiceImpl);
