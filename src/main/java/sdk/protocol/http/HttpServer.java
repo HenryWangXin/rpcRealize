@@ -10,9 +10,10 @@ import org.apache.catalina.core.StandardHost;
 import org.apache.catalina.startup.Tomcat;
 
 /**
- * @author tanghf
- * @className protocol.http.HttpServer.java
- * @createTime 2019/8/20 09:13
+ * HttpServer简介
+ *
+ * @author wangxin119
+ * @date 2020-09-10 10:44
  */
 public class HttpServer {
 
