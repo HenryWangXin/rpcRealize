@@ -32,9 +32,11 @@ public class FailoverClusterInvoker<T> extends  Invoker<T> {
         List<Invoker<T>> invoked = new ArrayList<Invoker<T>>(copyInvokers.size()); // invoked invokers.
         Set<String> providers = new HashSet<String>(len);
         for (int i = 0; i < len; i++) {//执行 retry 次的调用
+            //已经调用过的就不再调用了
+            copyInvokers.removeAll(invoked);
             //负载均衡选择一个调用者
-            Invoker<T> invoker = loadbalance.select(copyInvokers.removeAll(invoked)?copyInvokers:copyInvokers);
-            invoked.add(invoker); //用来保存已经调用的 invoker，已经调用过的就不再调用了， 对应上一句的  copyInvokers.removeAll(invoked)? copyInvokers : copyInvokers
+            Invoker<T> invoker = loadbalance.select(copyInvokers);
+            invoked.add(invoker); //用来保存已经调用的 invoker，已经调用过的就不再调用了
             try {
                 Object result = invoker.invoke(invocation);
                 return result;//调用成功则 return；跳出循环
